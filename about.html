@@ -122,9 +122,9 @@
           class="contact-form"
           onsubmit="sendEmail(); reset(); return false;">
             <label for="name">Name</label><br />
-            <input type="text" id="name" required autocomplete="no"/><br />
+            <input type="text" id="name" required autocomplete="no" placeholder="Your Full Name"/><br />
             <label for="email">Email</label><br />
-            <input type="email" id="email" required  autocomplete="no"/><br />
+            <input type="email" id="email" required  autocomplete="no" placeholder="Your Email"/><br />
             <label for="message">Message</label><br />
             <textarea
               name=""
@@ -133,6 +133,7 @@
               rows="5"
               required
               autocomplete="no"
+              placeholder="Your Message"
             ></textarea
             ><br />
             <button type="submit">Submit</button>

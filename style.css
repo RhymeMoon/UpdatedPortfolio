@@ -69,10 +69,11 @@ body {
   position: absolute;
   width: 1px;
   height: 1px;
-  background-color: #929292;
-  mix-blend-mode: lighten;
+  background-color: #ffffff;
+  mix-blend-mode: difference;
   border-radius: 50%;
-  box-shadow: 0 0 2px 4px rgb(255, 111, 0),0 0 5px 7px rgb(255, 157, 0), 0 0 5px 10px rgb(255, 255, 255)  ;
+  box-shadow: 0 0 2px 4px rgb(255, 111, 0), 0 0 5px 7px rgb(255, 157, 0),
+    0 0 5px 10px rgb(255, 255, 255);
   padding: 5px;
   transform: translate(-50%, -50%);
   pointer-events: none; /* Ensure the cursor doesn't interfere with other elements */
@@ -176,7 +177,6 @@ body {
 }
 /* explore style ********************/
 
-
 /* about style  **********************/
 
 #about-section {
@@ -222,6 +222,9 @@ hr {
   width: 100%;
   text-align: center;
 }
+#skill h1 {
+  font-size: 50px;
+}
 #skill-container {
   width: 100%;
   display: flex;
@@ -259,11 +262,14 @@ hr {
   width: 100%;
   margin: 10px 0;
   border-radius: 5px;
-  padding: 10px 0;
+  padding: 10px;
 }
 .contact-container button {
   padding: 10px 20px;
-  background-color: grey;
+  background-color: rgb(255, 0, 0);
+  border: none;
+  color: white;
+  border-radius: 5px;
 }
 .social-media {
   width: 40%;
@@ -365,7 +371,6 @@ hr {
   top: 0;
 }
 
-
 footer {
   width: 100%;
 }
@@ -377,6 +382,11 @@ footer p {
   color: white;
   font-size: 20px;
   height: 40px;
+}
+.swal-icon--success::before,
+.swal-icon--success::after,
+.swal-icon--success__hide-corners {
+  display: none;
 }
 @media only screen and (min-width: 1351px) and (max-width: 1720px) {
   * {
@@ -408,46 +418,38 @@ footer p {
     padding: 8px 30px !important;
   }
 
-/* about section stykle  */
-#about-section {
-  padding: 20px 300px !important;
-}
+  /* about section stykle  */
+  #about-section {
+    padding: 20px 300px !important;
+  }
 
-.whoAmI-box {
-  width: 800px;
-  position: relative;
-}
-.whoAmI-title {
-  padding: 20px !important;
-
-}
-.whoAmI-text {
-  padding: 50px !important;
-}
-#menu li {
-  list-style-type: none;
-}
-hr {
-  margin: 0 200px !important;
-}
-/* skills section style  **************/
-#skill {
-  margin: 50px 0 !important;
-}
-.skills {
-  margin: 10px 0 !important;
-  width: 20%;
-}
-.skills i {
-  font-size: 80px;
-}
-
-
-
-
-
-
-
+  .whoAmI-box {
+    width: 800px;
+    position: relative;
+  }
+  .whoAmI-title {
+    padding: 20px !important;
+  }
+  .whoAmI-text {
+    padding: 50px !important;
+  }
+  #menu li {
+    list-style-type: none;
+  }
+  hr {
+    margin: 0 200px !important;
+  }
+  /* skills section style  **************/
+  #skill {
+    margin: 50px 0 !important;
+  }
+  .skills {
+    margin: 10px 0 !important;
+    width: 20%;
+  }
+  .skills i {
+    font-size: 80px;
+  }
 
   /* project medium style  */
   .projects {
@@ -481,7 +483,7 @@ hr {
     margin-left: 20px !important;
     margin-bottom: 20px !important;
   }
-  #iframemn{
+  #iframemn {
     width: 200%;
     transform: scaleX(0.5);
     transform-origin: 0 0;
@@ -490,7 +492,7 @@ hr {
     font-size: 15px;
     position: fixed;
     bottom: 0;
-     height: 25px;
+    height: 25px;
     display: flex;
     align-items: center;
     justify-content: center;
@@ -501,7 +503,7 @@ hr {
     padding: 20px 300px 100px !important;
     display: none;
   }
-  
+
   .contact-container {
     color: white;
     width: 60%;
@@ -518,7 +520,9 @@ hr {
   }
   .contact-container button {
     padding: 10px 20px !important;
-    background-color: grey;
+    background-color: rgb(255, 0, 0);
+    border: none;
+    color: white;
   }
   .social-media {
     width: 40%;
@@ -531,6 +535,11 @@ hr {
   .social-media img {
     margin: 50px 20px !important;
     border-radius: 10px;
+  }
+  .swal-icon--success::before,
+  .swal-icon--success::after,
+  .swal-icon--success__hide-corners {
+    display: none;
   }
 }
 @media only screen and (min-width: 200px) and (max-width: 1350px) {
@@ -561,7 +570,7 @@ hr {
     background-color: rgb(35, 35, 35);
   }
   #menu li {
-   padding: 15px 0 !important;
+    padding: 15px 0 !important;
   }
   #hamburger {
     display: block;
@@ -666,7 +675,7 @@ hr {
     color: white;
     text-decoration: none;
   } */
-  
+
   /* project mobile style *********/
   #project-title {
     font-size: 35px;
@@ -705,7 +714,7 @@ hr {
     font-size: 15px;
     position: fixed;
     bottom: 0;
-     height: 25px;
+    height: 25px;
     display: flex;
     align-items: center;
     justify-content: center;
@@ -722,7 +731,7 @@ hr {
     flex-direction: column;
     padding: 50px 0 !important;
   }
-  
+
   .contact-container {
     width: 80%;
     margin-bottom: 50px !important;
@@ -739,7 +748,9 @@ hr {
   }
   .contact-container button {
     padding: 10px 20px !important;
-    background-color: grey;
+    background-color: rgb(255, 0, 0);
+    border: none;
+    color: white;
   }
   .social-media {
     width: 80%;
@@ -753,8 +764,9 @@ hr {
     border-radius: 10px;
   }
   .swal-modal {
+    box-sizing: border-box;
     width: 80%;
-    margin: 20px;
+    margin: 100px 20px !important;
     border-radius: 5%;
     position: absolute;
     top: 10%;
@@ -763,6 +775,11 @@ hr {
   }
   .swal-button {
     border-radius: 15%;
+    margin-top: 10px !important;
   }
-
+  .swal-icon--success::before,
+  .swal-icon--success::after,
+  .swal-icon--success__hide-corners {
+    display: none;
+  }
 }
