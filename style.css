@@ -1,0 +1,768 @@
+@font-face {
+  font-family: helvetica;
+  src: url(./Fonts/Helvetica.ttf);
+}
+* {
+  padding: 0;
+  margin: 0;
+  -webkit-tap-highlight-color: rgba(0, 0, 0, 0);
+}
+html::-webkit-scrollbar {
+  display: none;
+}
+.loader {
+  position: fixed;
+  top: 0;
+  left: 0;
+  width: 100vw;
+  height: 100vh;
+  display: flex;
+  align-items: center;
+  justify-content: center;
+  background-color: black;
+  z-index: 9999999;
+  /* background-image: url("./image/rhymemoon.png");
+  background-position: center;
+  background-size: cover;
+  background-attachment: fixed; */
+}
+.loader::after {
+  content: "";
+  width: 75px;
+  height: 75px;
+  border: 30px solid white;
+  border-top-color: red;
+  border-radius: 50%;
+  animation: spin 1s ease-in-out infinite;
+}
+@keyframes spin {
+  100% {
+    transform: rotate(360deg);
+  }
+}
+/* alert *************************************************/
+.swal-modal {
+  padding: 20px !important;
+  box-shadow: 0 0 10px 5px red;
+}
+.swal-button {
+  padding: 10px 24px !important;
+  background-color: red;
+}
+.swal-button:hover {
+  padding: 10px 24px !important;
+  background-color: rgb(255, 62, 62) !important;
+}
+body {
+  cursor: none;
+  height: fit-content;
+  font-family: helvetica;
+  background-color: black;
+  /* background-image: url('./Image/logo-background-dark.png');
+    background-position: center;
+    background-repeat: no-repeat;
+    background-size: cover;
+    background-attachment: fixed; */
+}
+/* navbar style ********************************/
+.cursor {
+  position: absolute;
+  width: 1px;
+  height: 1px;
+  background-color: #929292;
+  mix-blend-mode: lighten;
+  border-radius: 50%;
+  box-shadow: 0 0 2px 4px rgb(255, 111, 0),0 0 5px 7px rgb(255, 157, 0), 0 0 5px 10px rgb(255, 255, 255)  ;
+  padding: 5px;
+  transform: translate(-50%, -50%);
+  pointer-events: none; /* Ensure the cursor doesn't interfere with other elements */
+  transition: transform 0.2s ease-in-out;
+  z-index: 99999;
+}
+.header {
+  background-color: rgb(35, 35, 35);
+  color: white;
+  font-size: 40px;
+  height: 50px;
+  padding: 10px 100px;
+  display: flex;
+  justify-content: space-between;
+  position: relative;
+  top: 0;
+  left: 0;
+  right: 0;
+  z-index: 100;
+}
+.brand img {
+  height: 100%;
+}
+#menu {
+  display: flex;
+}
+#menu a {
+  margin: 0 25px;
+  text-decoration: none;
+  color: rgb(255, 255, 255);
+  position: relative;
+}
+#menu a::after {
+  content: "";
+  position: absolute;
+  left: 30%;
+  right: 30%;
+  bottom: -5px;
+  width: 40%;
+  height: 5px;
+  border-radius: 10px;
+  background-color: red;
+}
+#menu a:hover {
+  transform: scale(1.1);
+  transition: 0.5s;
+  cursor: none;
+}
+#menu a:hover::after {
+  background-color: red;
+  transition: 0.5s;
+  width: 100%;
+  left: 0;
+  right: 0;
+  cursor: none;
+}
+#hamburger,
+#close {
+  display: none;
+}
+/* home style ******************/
+#home-section {
+  height: fit-content;
+  color: white;
+  padding: 70px 150px;
+  display: flex;
+  justify-content: space-evenly;
+  flex-wrap: wrap-reverse;
+}
+#myName {
+  letter-spacing: 0.4em;
+  font-size: 100px;
+  margin-bottom: 50px;
+}
+#home-section p {
+  font-size: 30px;
+  line-height: 1.5;
+  letter-spacing: 10px;
+}
+
+.explore {
+  background-color: white;
+  padding: 20px 100px;
+  font-size: 30px;
+  text-decoration: none;
+  color: black;
+  display: inline-block;
+  margin: 100px 0;
+  cursor: none;
+}
+.explore:hover {
+  background-color: red;
+  color: white;
+}
+.right {
+  width: 500px;
+}
+.right img {
+  width: 100%;
+  height: 700px;
+}
+/* explore style ********************/
+
+
+/* about style  **********************/
+
+#about-section {
+  color: white;
+  position: relative;
+  height: fit-content;
+  display: flex;
+  flex-direction: column;
+  align-items: center;
+  justify-content: center;
+  padding: 20px 300px;
+}
+
+.whoAmI-box {
+  width: 800px;
+  position: relative;
+}
+.whoAmI-title {
+  position: absolute;
+  left: -260px;
+  top: 50px;
+  color: rgb(255, 255, 255);
+  background-color: red;
+  padding: 20px;
+  font-size: 50px;
+}
+.whoAmI-text {
+  background-color: rgb(255, 255, 255);
+  padding: 50px;
+  font-size: 20px;
+  color: black;
+}
+#menu li {
+  list-style-type: none;
+}
+hr {
+  width: 100%;
+  margin: 0 200px;
+}
+/* skills section style  **************/
+#skill {
+  margin: 50px 0;
+  width: 100%;
+  text-align: center;
+}
+#skill-container {
+  width: 100%;
+  display: flex;
+  justify-content: space-evenly;
+  flex-wrap: wrap;
+}
+.skills {
+  margin: 10px 0;
+  width: 20%;
+}
+.skills i {
+  font-size: 100px;
+}
+/* contact style ********************/
+#contact-section {
+  padding: 20px 300px 100px;
+  display: none;
+  color: white;
+  width: 100%;
+  box-sizing: border-box;
+  height: 90vh;
+  justify-content: center;
+  align-items: center;
+}
+
+.contact-container {
+  color: white;
+  width: 60%;
+}
+.contact-container form {
+  margin-top: 30px;
+}
+.contact-container input,
+.contact-container textarea {
+  width: 100%;
+  margin: 10px 0;
+  border-radius: 5px;
+  padding: 10px 0;
+}
+.contact-container button {
+  padding: 10px 20px;
+  background-color: grey;
+}
+.social-media {
+  width: 40%;
+  text-align: center;
+  margin-top: 100px;
+}
+.social-media h1 {
+  margin-bottom: 25px;
+}
+.social-media img {
+  margin: 50px 20px;
+  border-radius: 10px;
+}
+/* separate container of project  */
+/* #work-container {
+  color: white;
+  height: fit-content;
+  width: 100%;
+  padding: 0 200px;
+  box-sizing: border-box;
+  justify-content: space-around;
+  display: flex;
+}
+#projects-title {
+  display: block;
+  margin: 0 200px 0;
+  color: white;
+  font-size: 50px;
+}
+.works {
+  width: 30%;
+  height: fit-content;
+  padding: 0;
+  position: relative;
+  top: 0px;
+  overflow: hidden;
+  margin: 50px 10px;
+  border: 5px solid red;
+  border-radius: 10px;
+}
+.works div {
+  width: 100%;
+  text-align: center;
+  padding: 10px;
+  box-sizing: border-box;
+}
+.works a {
+  color: white;
+  text-decoration: none;
+} */
+/* project style ********************/
+#project-title {
+  display: none;
+  margin: 0 200px 0;
+  color: white;
+  font-size: 50px;
+}
+#project-content {
+  color: white;
+  height: fit-content;
+  width: 100%;
+  display: none;
+  padding: 0 200px;
+  box-sizing: border-box;
+}
+.projects {
+  width: 100%;
+  height: fit-content;
+  padding: 0;
+  position: relative;
+  top: 0px;
+  overflow: hidden;
+  margin: 50px 10px;
+  border: 5px solid red;
+  border-radius: 10px;
+}
+.project-name {
+  display: none;
+}
+.projects div {
+  width: 100%;
+  text-align: center;
+  padding: 10px;
+  box-sizing: border-box;
+}
+.projects a {
+  color: white;
+  text-decoration: none;
+}
+.projects a:hover {
+  color: red;
+  cursor: none;
+}
+.iframe {
+  width: 100%;
+  height: 650px;
+  position: relative;
+  left: 0;
+  top: 0;
+}
+
+
+footer {
+  width: 100%;
+}
+footer p {
+  position: absolute;
+  bottom: 0;
+  width: 100%;
+  text-align: center;
+  color: white;
+  font-size: 20px;
+  height: 40px;
+}
+@media only screen and (min-width: 1351px) and (max-width: 1720px) {
+  * {
+    padding: 0 !important;
+    margin: 0 !important;
+    box-sizing: border-box;
+  }
+  body {
+    cursor: default;
+  }
+  .header {
+    padding: 0 100px !important;
+  }
+  #menu li {
+    padding: 0 20px !important;
+  }
+  /* home medium style  */
+  #home-section {
+    height: fit-content;
+    padding: 50px !important;
+  }
+
+  #home-section p {
+    margin-bottom: 10px !important;
+    letter-spacing: normal;
+  }
+  .explore {
+    margin: 50px 0 !important;
+    padding: 8px 30px !important;
+  }
+
+/* about section stykle  */
+#about-section {
+  padding: 20px 300px !important;
+}
+
+.whoAmI-box {
+  width: 800px;
+  position: relative;
+}
+.whoAmI-title {
+  padding: 20px !important;
+
+}
+.whoAmI-text {
+  padding: 50px !important;
+}
+#menu li {
+  list-style-type: none;
+}
+hr {
+  margin: 0 200px !important;
+}
+/* skills section style  **************/
+#skill {
+  margin: 50px 0 !important;
+}
+.skills {
+  margin: 10px 0 !important;
+  width: 20%;
+}
+.skills i {
+  font-size: 80px;
+}
+
+
+
+
+
+
+
+
+  /* project medium style  */
+  .projects {
+    box-sizing: content-box;
+    width: 90%;
+    height: fit-content;
+    display: none;
+    flex-direction: column;
+    align-self: center;
+    margin-bottom: 20px !important;
+  }
+  .projects div {
+    font-size: 20px;
+  }
+  #project-title {
+    font-size: 40px;
+    text-align: center;
+    margin: 100px 0 25px !important;
+  }
+  #project-content {
+    flex-wrap: wrap;
+    padding: 5px 0 !important;
+    flex-direction: column;
+    width: 100%;
+    padding: 20px;
+  }
+  .project-name {
+    display: block;
+    text-align: left;
+    font-size: 30px;
+    margin-left: 20px !important;
+    margin-bottom: 20px !important;
+  }
+  #iframemn{
+    width: 200%;
+    transform: scaleX(0.5);
+    transform-origin: 0 0;
+  }
+  footer p {
+    font-size: 15px;
+    position: fixed;
+    bottom: 0;
+     height: 25px;
+    display: flex;
+    align-items: center;
+    justify-content: center;
+    background-color: rgba(0, 0, 0, 0.534);
+  }
+  /* contact medium size  */
+  #contact-section {
+    padding: 20px 300px 100px !important;
+    display: none;
+  }
+  
+  .contact-container {
+    color: white;
+    width: 60%;
+  }
+  .contact-container form {
+    margin-top: 30px !important;
+  }
+  .contact-container input,
+  .contact-container textarea {
+    width: 100%;
+    margin: 10px 0 !important;
+    border-radius: 5px;
+    padding: 10px 0 !important;
+  }
+  .contact-container button {
+    padding: 10px 20px !important;
+    background-color: grey;
+  }
+  .social-media {
+    width: 40%;
+    text-align: center;
+    margin-top: 100px !important;
+  }
+  .social-media h1 {
+    margin-bottom: 25px;
+  }
+  .social-media img {
+    margin: 50px 20px !important;
+    border-radius: 10px;
+  }
+}
+@media only screen and (min-width: 200px) and (max-width: 1350px) {
+  * {
+    padding: 0 !important;
+    margin: 0 !important;
+    box-sizing: border-box;
+  }
+  body {
+    cursor: default;
+  }
+  .cursor {
+    display: none;
+  }
+
+  /* header style  */
+  .header {
+    padding: 0 20px 5px !important;
+  }
+  #menu {
+    display: none;
+    position: absolute;
+    right: 0;
+    top: 45px;
+    padding: 5px 20px !important;
+    text-align: center;
+    font-size: 30px;
+    background-color: rgb(35, 35, 35);
+  }
+  #menu li {
+   padding: 15px 0 !important;
+  }
+  #hamburger {
+    display: block;
+  }
+  /* home mobile style  */
+  #home-section {
+    height: fit-content;
+  }
+  .right img {
+    height: 100%;
+    width: 100%;
+    position: relative;
+  }
+  .left {
+    position: absolute;
+    top: 0;
+    left: 0;
+    z-index: 2;
+    padding-left: 25px !important;
+    background-color: rgba(0, 0, 0, 0.392);
+    width: 100%;
+  }
+
+  #myName {
+    font-size: 30px;
+    margin: 300px 0 20px !important;
+    letter-spacing: 1;
+  }
+  #home-section p {
+    font-size: 15px;
+    margin-bottom: 10px !important;
+    letter-spacing: normal;
+  }
+  .explore {
+    margin: 50px 0 !important;
+    padding: 8px 30px !important;
+  }
+  /* about mobile style  ***************/
+  #about-section {
+    padding: 10px 10px 50px !important;
+    position: relative;
+  }
+  .whoAmI-title {
+    position: relative;
+    left: 0;
+    top: 0;
+    width: fit-content;
+    padding: 5px 20px !important;
+  }
+  .whoAmI-box {
+    width: 95%;
+  }
+  .whoAmI-text {
+    padding: 10px !important;
+  }
+  #skill h1 {
+    margin: 20px 0 !important;
+  }
+  .skills {
+    width: 30%;
+    margin-bottom: 50px !important;
+  }
+  .skills i {
+    font-size: 50px;
+  }
+  /* project separate page  */
+  /* #work-container {
+    color: white;
+    height: fit-content;
+    width: 100%;
+    justify-content: space-around;
+    display: flex;
+    flex-direction: column;
+  }
+  #projects-title {
+    display: block;
+    margin: 0 200px 0;
+    color: white;
+    font-size: 50px;
+
+  } */
+  /* .works {
+    width: 100%;
+    height: 100%;
+    padding: 0;
+    position: relative;
+    top: 0px;
+    overflow: hidden;
+    margin: 50px 10px;
+    border: 5px solid red;
+    border-radius: 10px;
+    display: none;
+    flex-direction: column;
+  }
+  .works div {
+    width: 100%;
+    text-align: center;
+    padding: 10px;
+    box-sizing: border-box;
+  }
+  .works a {
+    color: white;
+    text-decoration: none;
+  } */
+  
+  /* project mobile style *********/
+  #project-title {
+    font-size: 35px;
+    text-align: center;
+    margin: 100px 0 25px !important;
+  }
+  #project-content {
+    flex-wrap: wrap;
+    padding: 5px 0 !important;
+    flex-direction: column;
+    width: 100%;
+    padding: 20px;
+  }
+  .project-name {
+    display: block;
+    text-align: left;
+    font-size: 30px;
+    margin-left: 20px !important;
+    margin-bottom: 20px !important;
+  }
+  .projects {
+    box-sizing: border-box;
+    width: 95%;
+    display: none;
+    flex-direction: column;
+    align-self: center;
+    margin-bottom: 20px !important;
+  }
+  .iframe {
+    max-height: 650px;
+    max-width: 100%;
+    transform: scale(1);
+    transform-origin: 0 0;
+  }
+  footer p {
+    font-size: 15px;
+    position: fixed;
+    bottom: 0;
+     height: 25px;
+    display: flex;
+    align-items: center;
+    justify-content: center;
+    background-color: rgba(0, 0, 0, 0.534);
+  }
+
+  /* contact style  */
+  #contact-section {
+    display: none;
+    box-sizing: border-box;
+    height: fit-content;
+    justify-content: center;
+    align-items: center;
+    flex-direction: column;
+    padding: 50px 0 !important;
+  }
+  
+  .contact-container {
+    width: 80%;
+    margin-bottom: 50px !important;
+  }
+  .contact-container form {
+    margin-top: 30px !important;
+  }
+  .contact-container input,
+  .contact-container textarea {
+    width: 100%;
+    margin: 10px 0 !important;
+    border-radius: 5px;
+    padding: 10px 0 !important;
+  }
+  .contact-container button {
+    padding: 10px 20px !important;
+    background-color: grey;
+  }
+  .social-media {
+    width: 80%;
+    text-align: center;
+  }
+  .social-media h1 {
+    margin-bottom: 25px !important;
+  }
+  .social-media img {
+    margin: 50px 20px !important;
+    border-radius: 10px;
+  }
+  .swal-modal {
+    width: 80%;
+    margin: 20px;
+    border-radius: 5%;
+    position: absolute;
+    top: 10%;
+    left: 5%;
+    right: 5%;
+  }
+  .swal-button {
+    border-radius: 15%;
+  }
+
+}

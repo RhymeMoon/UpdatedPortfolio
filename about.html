@@ -1,0 +1,233 @@
+<!DOCTYPE html>
+<html lang="en">
+  <head>
+    <meta charset="UTF-8" />
+    <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+    <meta property="og:type" content="website" />
+    <meta property="og:title" content="RhymeMoon's Portfolio" />
+    <meta
+      property="og:description"
+      content="I'm a Front-end Web Developer, specializing in website and graphic design. I'm a proactive guy with a strong passion and a ton of reliability. I absorb knowledge eagerly and firmly believe in the value of hard work. My main objective? To master web development."
+    />
+    <meta property="og:url" content="https://www.rhymemoon.site" />
+    <meta
+      property="og:image"
+      content="https://rhymemoon.github.io/Portfolio//image/raymund.jpeg"
+    />
+    <meta property="og:image:width" content="1200" />
+    <meta property="og:image:height" content="630" />
+    <meta http-equiv="X-UA-Compatible" content="IE=edge" />
+    <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+    <link rel="icon" href="image/header_logo.png" type="image/x-icon" />
+    <title>All About RhymeMoon</title>
+    <link rel="stylesheet" href="style.css" />
+  </head>
+  <body>
+    <div class="cursor"></div>
+    <div class="loader" id="loading-container"></div>
+    <div class="header">
+      <div class="brand">
+        <a href="index.html"
+          ><img src="./Image/white-transparent-logo.png" alt=""
+        /></a>
+      </div>
+      <div class="toggler">
+        <span id="hamburger"
+          ><i
+            class="fa-solid fa-bars"
+            style="color: #f5f5f5; font-size: 40px"
+          ></i
+        ></span>
+        <span id="close"
+          ><i class="fa-solid fa-x" style="color: #ffffff; font-size: 40px"></i
+        ></span>
+      </div>
+
+      <ul id="menu">
+        <li id="about"><a href="">About</a></li>
+        <li id="project"><a href="">Projects</a></li>
+        <li id="contact"><a href="">Contact</a></li>
+      </ul>
+      
+    </div>
+    <div id="about-content">
+      <div id="about-section">
+        <div class="whoAmI-box">
+          <h1 class="whoAmI-title">WHO AM I?</h1>
+          <p class="whoAmI-text">
+            "I'm a digital marketer, and I studied E-commerce with a focus on
+            helping small businesses with their online marketing. I taught
+            myself how to create good-looking and functional websites using
+            HTML, CSS, and Javascript. I also use website builders like
+            WordPress to make websites. I enjoy what I do and like taking on new
+            challenges. <br />
+            <br />
+
+            In today's world, having a good website is crucial for businesses.
+            Some people use easy website builders like Squarespace or WordPress,
+            but I prefer making unique and interesting websites. I'm good at
+            managing my time, learning new things, and working on my own or in a
+            team. I'm also good at solving problems and staying organized. My
+            main goal is to get really good at web development, and I'm always
+            trying to learn and improve."
+          </p>
+        </div>
+        <br />
+        <hr />
+        <div id="skill">
+          <h1>SKILL SET</h1>
+          <div id="skill-container">
+            <div class="skills">
+              <div class="icon">
+                <i class="fa-brands fa-html5" aria-hidden="true"></i>
+              </div>
+              <div class="icon-name">HTML</div>
+            </div>
+            <div class="skills">
+              <div class="icon">
+                <i class="fa-brands fa-css3-alt" aria-hidden="true"></i>
+              </div>
+              <div class="icon-name">CSS</div>
+            </div>
+            <div class="skills">
+              <div class="icon">
+                <i class="fa-brands fa-js" aria-hidden="true"></i>
+              </div>
+              <div class="icon-name">JavaScript</div>
+            </div>
+            <div class="skills">
+              <div class="icon">
+                <i class="fa-brands fa-bootstrap" aria-hidden="true"></i>
+              </div>
+              <div class="icon-name">Bootstrap</div>
+            </div>
+            <div class="skills">
+              <div class="icon">
+                <i class="fa-solid fa-photo-film" aria-hidden="true"></i>
+              </div>
+              <div class="icon-name">Vedio & Photo Editing</div>
+            </div>
+          </div>
+        </div>
+      </div>
+      <div id="contact-section">
+        <div class="contact-container">
+          <h1>Get in Touch!</h1>
+          <p>
+            For business inquiries and collaborations please contact me below
+            and leave a link to your website or portfolio. I am looking forward
+            to hearing from you!
+          </p>
+          <form  action="submit"
+          class="contact-form"
+          onsubmit="sendEmail(); reset(); return false;">
+            <label for="name">Name</label><br />
+            <input type="text" id="name" required autocomplete="no"/><br />
+            <label for="email">Email</label><br />
+            <input type="email" id="email" required  autocomplete="no"/><br />
+            <label for="message">Message</label><br />
+            <textarea
+              name=""
+              id="message"
+              cols="30"
+              rows="5"
+              required
+              autocomplete="no"
+            ></textarea
+            ><br />
+            <button type="submit">Submit</button>
+          </form>
+        </div>
+        <div class="social-media">
+          <h1>SOCIAL MEDIA</h1>
+          <h3>
+            EMAIL:
+            <a
+              href="mailto:info@rhymemoon.site"
+              target="_blank"
+              rel="noreferrer"
+              >info@rhymemoon.site</a
+            >
+          </h3>
+          <h3>MOBILE#: +63 951 822 5371</h3>
+          <a href="https://www.facebook.com/aban.raymund" target="_blank"><img src="./Image/icons8-facebook.gif" alt="" /></a>
+          <a href="https://github.com/RhymeMoon" target="_blank"><img src="./Image/icons8-github.gif" alt="" /></a>
+          <a href="https://www.linkedin.com/in/raymund-aban-54a685168/" target="_blank"><img src="./Image/icons8-linkedin.gif" alt="" /></a>
+          
+        </div>
+      </div>
+    </div>
+    <h1 id="project-title">Interactive Mini Projects</h1>
+    <div id="project-content">
+      <p class="project-name" onclick="toggleIframe('iframe1')"> → Native product site</p>
+      <div class="projects"  id="iframe1">
+        <iframe
+          class="iframe"
+         
+          loading="eager"
+          src="https://davaolocalcraft.store"
+          frameborder="0"
+          scrolling="yes"
+        ></iframe>
+        <div><a href="https://davaolocalcraft.store" target="_blank">Link Here</a></div>
+      </div>
+      
+      <p class="project-name" onclick="toggleIframe('iframe2')">→ tic-tac-toe</p>
+      <div class="projects"id="iframe2">
+        <iframe
+          class="iframe"
+          
+          loading="eager"
+          src="https://rhymemoon.github.io/TIC-TAC-TOE/?"
+          frameborder="0"
+          scrolling="no"
+        ></iframe>
+        <div><a href="https://rhymemoon.github.io/TIC-TAC-TOE/?" target="_blank">Link Here</a></div>
+      </div>
+      
+      <p class="project-name" onclick="toggleIframe('iframe3')">→ simple converter</p>
+      <div class="projects" id="iframe3">
+        <iframe
+          class="iframe"
+          
+          loading="eager"
+          src="https://rhymemoon.github.io/Activity-4-Conversion-Calculator-with-JavaScript-Conditional-Statement-/?"
+          frameborder="0"
+          scrolling="no"
+        ></iframe>
+        <div><a href="https://rhymemoon.github.io/Activity-4-Conversion-Calculator-with-JavaScript-Conditional-Statement-/?" target="_blank">Link Here</a></div>
+      </div>
+      
+      <p class="project-name" onclick="toggleIframe('iframe4')"> → simple to-do-list</p>
+      <div class="projects" id="iframe4">
+        <iframe
+          class="iframe"
+          
+          loading="eager"
+          src="https://rhymemoon.github.io/TO-DO-LIST/?"
+          frameborder="0"
+          scrolling="no"
+        ></iframe>
+        <div><a href="https://rhymemoon.github.io/TO-DO-LIST/?" target="_blank">Link Here</a></div>
+      </div>
+    </div>
+   
+    <footer>
+      <p>
+        &copy;
+        <script>
+          document.write(new Date().getUTCFullYear());
+        </script>
+        RhymeMoon. All rights reserved.
+      </p>
+    </footer>
+    <script src="config.js"></script>
+    <script
+      src="https://kit.fontawesome.com/4548233bbc.js"
+      crossorigin="anonymous"
+    ></script>
+    
+    <script src="https://smtpjs.com/v3/smtp.js"></script>
+    <script src="https://unpkg.com/sweetalert/dist/sweetalert.min.js"></script>
+  </body>
+</html>
