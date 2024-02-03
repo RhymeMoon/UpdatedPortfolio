@@ -1,17 +1,16 @@
 ///loading animation
 document.onreadystatechange = function () {
   // Set a timeout of 5000 milliseconds (5 seconds)
- setTimeout(function() {
-  if (document.readyState !== "complete") {
-    document.querySelector(".loader").style.display = "block";
-    document.querySelector("body").style.display = "none";
-  } else {
-    document.querySelector(".loader").style.display = "none";
-    document.querySelector("body").style.display = "block";
-  }
+  setTimeout(function () {
+    if (document.readyState !== "complete") {
+      document.querySelector(".loader").style.display = "block";
+      document.querySelector("body").style.display = "none";
+    } else {
+      document.querySelector(".loader").style.display = "none";
+      document.querySelector("body").style.display = "block";
+    }
+  }, 2000);
 
-  }, 2000 )
-    
   // Adjust the timeout value as needed
 };
 
@@ -22,74 +21,64 @@ document.addEventListener("mousemove", (e) => {
   cursor.style.top = e.clientY + "px";
 });
 
-// menu script 
+// menu script
 let about = document.getElementById("about");
 let project = document.getElementById("project");
-
-let aboutSection = document.getElementById("about-section");
-let exploreContent = document.getElementById("project-content");
-let projectTitle = document.getElementById("project-title");
 let contact = document.getElementById("contact");
+let aboutSection = document.getElementById("about-section");
+let projectContent = document.getElementById("project-content");
 let contactSection = document.getElementById("contact-section");
-let x = window.matchMedia("(max-width:1350px)");
+
+let projectTitle = document.getElementById("project-title");
+let mobileSize = window.matchMedia("(max-width:1350px)");
 
 about.addEventListener("click", (e) => {
-  
-  exploreContent.style.display = "none";
+  showSection(aboutSection);
   projectTitle.style.display = "none";
-  aboutSection.style.display = "flex";
-  contactSection.style.display = "none";
-
-  if (x.matches) {
-    menu.style.display = "none";
-    closeButton.style.display = "none";
-    hamburger.style.display = "block";
-  }
   e.preventDefault();
 });
+
 project.addEventListener("click", (event) => {
   event.preventDefault();
-  setTimeout(function () {
-    exploreContent.style.display = "flex";
-    aboutSection.style.display = "none";
-    projectTitle.style.display = "block";
-    contactSection.style.display = "none";
-    if (x.matches) {
-      menu.style.display = "none";
-      closeButton.style.display = "none";
-      hamburger.style.display = "block";
-    }
-  }, 500);
+  projectTitle.style.display = "block";
+  showSection(projectContent);
 });
-
 contact.addEventListener("click", (event) => {
   event.preventDefault();
-  contactSection.style.display = "flex";
-  aboutSection.style.display = "none";
-  exploreContent.style.display = "none";
   projectTitle.style.display = "none";
-  if (x.matches) {
+  showSection(contactSection);
+});
+
+function showSection(targetSection) {
+  projectContent.style.display = "none";
+  aboutSection.style.display = "none";
+  contactSection.style.display = "none";
+
+  if (mobileSize.matches) {
     menu.style.display = "none";
     closeButton.style.display = "none";
     hamburger.style.display = "block";
   }
-});
-
-// hamburger script 
+  targetSection.style.display = "flex";
+}
+// hamburger script
 let hamburger = document.getElementById("hamburger");
 let closeButton = document.getElementById("close");
 let menu = document.getElementById("menu");
 
 hamburger.addEventListener("click", () => {
-  hamburger.style.display = "none";
-  closeButton.style.display = "block";
+  showMenu(closeButton);
   menu.style.display = "block";
 });
 closeButton.addEventListener("click", () => {
-  hamburger.style.display = "block";
-  closeButton.style.display = "none";
-  menu.style.display = "none";
+  showMenu(hamburger);
 });
+
+function showMenu(menus) {
+  hamburger.style.display = "none";
+  closeButton.style.display = "none";
+  menus.style.display = "block";
+}
 
 // Comment remover
 document.addEventListener("DOMContentLoaded", function () {
@@ -109,7 +98,7 @@ function removeComments(element) {
   }
 }
 
-// project toggle script 
+// project toggle script
 function toggleIframe(iframeId) {
   var iframe = document.getElementById(iframeId);
   if (iframe.style.display === "none") {
@@ -118,7 +107,7 @@ function toggleIframe(iframeId) {
     iframe.style.display = "none";
   }
 }
-// sendig email 
+// sendig email
 function sendEmail() {
   let username = document.getElementById("name").value;
   let email = document.getElementById("email").value;
